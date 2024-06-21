@@ -28,7 +28,7 @@
   - name: print the directory stats
     ansible.builtin.debug: 
      msg: "output: {{directory}}"
-  - when: directory stat.exists == False
+  - when: directory stat.exist == False
     name: create /app directory
     ansible.builtin.file:
      path: /app
