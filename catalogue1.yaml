@@ -73,7 +73,7 @@
      disable_gpg_check: true
 
   - name: load catalogue data
-    ansible.builtin.command: mongo --host 172.31.37.39 < /app /schema /catalogue.js   
+    ansible.builtin.command: mongo --host 172.31.37.39 < /app/schema/catalogue.js   
 
   - name: restart catalogue
     ansible.builtin.service: 
