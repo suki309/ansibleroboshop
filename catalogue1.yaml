@@ -56,6 +56,7 @@
     ansible.builtin.copy:
      src: catalogue1.service
      dest: /etc/systemd/system/catalogue.service
+
   - name: daemon reload
     ansible.builtin.systemd:
      daemon_reload: true
@@ -69,6 +70,7 @@
     ansible.builtin.yum:
      name: mongodb-org-shell   
      state: installed
+     disable_gpg_check: true
 
   - name: load catalogue data
     ansible.builtin.command: mongo --host 172.31.37.39 < /app /schema /catalogue.js   
